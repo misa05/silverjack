@@ -44,8 +44,8 @@ function playAgain()
     
     //picks a random index of the players array to display their cards
      function getPlayerByRamdomIndex(&$hasBeenDisplayed,&$index){
-        global $benCards,$cruzCards,$misealCards,$player4Cards;
-        $players = array($benCards,$cruzCards,$misealCards,$player4Cards);
+        global $benCards,$cruzCards,$misaelCards,$player4Cards;
+        $players = array($benCards,$cruzCards,$misaelCards,$player4Cards);
         $randIndex = rand(0,3);
         while (sequentialSearch($hasBeenDisplayed,$randIndex)){
             $randIndex = rand(0,3);
@@ -133,7 +133,7 @@ function playAgain()
             $scores[] = $score2;
             $scores[] = $score3;
             $scores[] = $score4;
-            $players = array("Ben","Cruz","Miseal","Mario");
+            $players = array("Ben","Cruz","Misael","Mario");
             $sums = array();
             
             for ($i = 0; $i < count($winner);$i++){
@@ -164,7 +164,7 @@ function playAgain()
         }
         //every other case
         else{
-            $players = array("Ben","Cruz","Miseal","Mario");
+            $players = array("Ben","Cruz","Misael","Mario");
             $scores = array();
             
             $scores[] = $score1;
@@ -197,7 +197,7 @@ function playAgain()
         $scores[] = $score2;
         $scores[] = $score3;
         $scores[] = $score4;
-        $players = array("Ben","Cruz","Miseal","Mario");
+        $players = array("Ben","Cruz","Misael","Mario");
         $high_score = 0;
         $allBusted = true;
         
@@ -248,13 +248,13 @@ function playAgain()
         //decks to hold players pictures and cards
         $benCards = array();
         $cruzCards = array();
-        $misealCards = array();
+        $misaelCards = array();
         $player4Cards = array();
         
         //sets the picture for the users cards
         $benCards[0] = "players/ben.png";
         $cruzCards[0] = "players/eddy.jpg";
-        $misealCards[0] = "players/mi.png";
+        $misaelCards[0] = "players/mi.png";
         $player4Cards[0] = "players/mario.png";
         
         
@@ -289,17 +289,23 @@ function playAgain()
         $winners = array();
         getWinners($scores[0],$scores[1],$scores[2],$scores[3],$winners);
         $sums = getWinningSum($winners,$scores[0],$scores[1],$scores[2],$scores[3]);
-        
-        echo "<h2>$winners[0] wins $sums[0] points";
+        echo "<h2 id=winner style=color:#290a6b;>$winners[0] Wins! $sums[0] points</h2>";
         echo "<br/>";
-       
         ?>
+        
         <form method="GET">
          <input type="submit" name="submitForm" value="Play Again"/>
         </form>
+        <br />
         <img src="../../img/csumb-logo.png" />
          </main>
         
         </div>
+        <br />
+        <footer>
+            &copy; Aguilar, Cruz, Dagg, 2016. <br/> Disclamer; The information on this page might not be accurate. It is used for academic purposes.
+            <br/>
+            
+        </footer>
     </body>
 </html>
